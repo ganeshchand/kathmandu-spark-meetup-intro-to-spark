@@ -1,0 +1,10 @@
+id,name,age,sex,city,state,zip
+100, John Smith, 32,M, Austin, TX, 78727
+200, Joe Johnson, 13, M, Dallas, TX, 75201
+300, Bob Jones, 14, M, Houston, TX, 77028
+400, Andy Davis, 18, M, San Antonio, TX, 78227
+500, James Williams, 25, M, Austin, TX, 78727
+600, David McDonald, 26, M, San Francisco, CA, 94101
+700, Pat Johnson, 23, M, San Francisco, TX, 94012
+800, Lisa Ray, 16, F, San Francisco, TX, 94012
+900, Kay Parker, 18, F, San Francisco, TX, 94013

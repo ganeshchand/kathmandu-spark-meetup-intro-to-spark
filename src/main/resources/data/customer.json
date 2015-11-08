@@ -1,0 +1,9 @@
+{"id": 100,"name": "John Smith", "age": 32,"sex": "M", "city": "Austin", "state": "TX", "zip": "78727"}
+{"id": 200,"name": "Joe Johnson", "age": 13,"sex": "M", "city": "Dallas", "state": "TX", "zip": "75201"}
+{"id": 300,"name": "Bob Jones", "age": 14,"sex": "M", "city": "Houstron", "state": "TX", "zip": "77028"}
+{"id": 400,"name": "Andy Davis", "age": 18,"sex": "M", "city": "San Antonio", "state": "TX", "zip": "78227"}
+{"id": 500,"name": "James Williams", "age": 25,"sex": "M", "city": "Austin", "state": "TX", "zip": "78227"}
+{"id": 600,"name": "David McDonald", "age": 26,"sex": "M", "city": "San Francisco", "state": "CA", "zip": "94101"}
+{"id": 700,"name": "Pat Johnson", "age": 23,"sex": "M", "city": "San Francisco", "state": "CA", "zip": "94102"}
+{"id": 800,"name": "Lisa Ray", "age": 16,"sex": "F", "city": "San Francisco", "state": "CA", "zip": "94102"}
+{"id": 900,"name": "Katy Parker", "age": 18,"sex": "F", "city": "San Francisco", "state": "CA", "zip": "94103"}
