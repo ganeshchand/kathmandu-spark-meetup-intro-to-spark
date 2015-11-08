@@ -5,24 +5,27 @@
 > bin/spark-shell --master "local[*]" --driver-memory 2G
 
 ###Spark RDD Basics
+```scala
 
-> val numRDD = sc.parallelize(1 to 10)
+val numRDD = sc.parallelize(1 to 10)
 
-> val evenNumRDD = numRDD.filter(_ % 2 == 0)
+val evenNumRDD = numRDD.filter(_ % 2 == 0)
 
-> val oddNumRDD = numRDD.filter(_ % 2 != 0)
+val oddNumRDD = numRDD.filter(_ % 2 != 0)
 
-> numRDD.collect
+numRDD.collect
 
-> evenNumRDD.collect
+evenNumRDD.collect
 
-> oddNumRDD.collect
+oddNumRDD.collect
 
-> val unionRDD = evenNumRDD.union(oddNumRDD)
+val unionRDD = evenNumRDD.union(oddNumRDD)
 
-> unionRDD.collect
+unionRDD.collect
 
-> val sortedUnionRDD = unionRDD.collect.sorted
+val sortedUnionRDD = unionRDD.collect.sorted
+
+```
 
 
 ###SPark SQL Basics
