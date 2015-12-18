@@ -10,7 +10,8 @@ Follow instructions [here](notes/install-spark.md)
 $ git clone https://github.com/ganeshchand/kathmandu-spark-meetup-intro-to-spark.git
 ```
 
-
+###Apache Spark Basic
+[Code Sample](notes/spark-basic-repl.md)
 
 
 
