@@ -1,8 +1,7 @@
-package com.gc.spark.meetup.learningspark.scala
+package com.gc.spark.meetup.learningspark.scala.rdd
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
 
 /**
   * Created by ganeshchand on 11/5/15.
@@ -39,7 +38,7 @@ object WordCount {
           * It should only be used if the resulting map is expected to be small, as
           * the whole thing is loaded into the driver's memory.
           */
-        val simpleWordCounts = words.countByValue().filter(_._2 > 1) // filter out words with count < 2
+        val simpleWordCounts = words.countByValue().filter(_._2 > 1) // filter out words with count > 2
         println(simpleWordCounts.mkString(","))
       }
     }

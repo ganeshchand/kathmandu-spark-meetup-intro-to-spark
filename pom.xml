@@ -39,6 +39,12 @@
             <artifactId>spark-csv_${scala.version}</artifactId>
             <version>1.2.0</version>
         </dependency>
+        <!-- OpenCSV to parse CSV with RDD -->
+        <dependency>
+            <groupId>net.sf.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.3</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>

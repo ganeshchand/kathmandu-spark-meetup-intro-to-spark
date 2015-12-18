@@ -7,12 +7,10 @@ $SPARK_HOME/bin/spark-shell --master "local[*]" --driver-memory 2G
 ```
 ###Spark RDD Basics
 
-```scala
-
+```
 val numRDD = sc.parallelize(1 to 10)
-
+val numRDD = sc.parallelize(1 to 10)
 val evenNumRDD = numRDD.filter(_ % 2 == 0)
-
 val oddNumRDD = numRDD.filter(_ % 2 != 0)
 
 numRDD.collect
@@ -29,8 +27,37 @@ val sortedUnionRDD = unionRDD.collect.sorted
 
 ```
 
+####Analyze LogFile
+```
+Sample Log Content:
+15/12/18 05:54:32 INFO SparkContext: Running Spark version 1.5.1
+2015-12-18 05:54:32.510 java[4446:1871265] Unable to load realm info from SCDynamicStore
+15/12/18 05:54:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 
-###SPark SQL Basics
+
+val logFilePath = "/Users/ganeshchand/data/log/spark-log.txt"
+
+val logFileRDD = sc.textFile(logFilePath)
+
+logFileRDD.toDebugString
+
+val infoLogRDD = logFileRDD.filter(line => line.contains("INFO"))
+
+infoLogRDD.count
+
+val warnLogRDD = logFileRDD.filter(line => line.contains("WARN"))
+
+
+warnLogRDD.count
+
+val errorLogRDD = logFileRDD.filter(line => line.contains("ERROR"))
+
+errorLogRDD.count
+
+```
+
+
+###Spark SQL Basics
 
 ####Text File
 
@@ -74,7 +101,7 @@ customerDF.filter(dfCustomers("customer_id").equalTo(500)).show()
 dfCustomers.groupBy("zip_code").count().show() // Count the customers by zip code
 
 
- We can also programmatically specify the schema of the dataset. This is useful when the custom classes cannot be 
+ We can also pragmatically specify the schema of the dataset. This is useful when the custom classes cannot be
  defined ahead of time because the structure of data is encoded in a string.Following code example shows how to 
  specify the schema using the new data type classes StructType, StringType, and StructField.
  
@@ -125,7 +152,7 @@ sqlContext.sql("select * from customer").show
 
 sqlContext.sql("select * from customer order by id").show
 
-sqlContext.sql("select count(*) as teenAgeCount, city from customer where age between 13 and 20 group by city ").show
+sqlContext.sql("select count(*) as teenAgeCount, city from customer where age between 13 and 19 group by city ").show
 
 ```
 
@@ -135,6 +162,18 @@ bin/spark-shell --master "local[*]" --driver-memory 2G --packages com.databricks
 
 *   Using SQL API
 *   Using Scala API
+
+```scala
+val customerDF = sqlContext.read
+                .format("com.databricks.spark.csv")
+                .option("header","true") // Use first line of all files as header
+                .option("inferSchema","true") // Automatically infer data types
+                .load("customer.csv")
+                
+customerDF.cache
+customerDF.registerTempTable("customer") 
+
+
 
 
 
